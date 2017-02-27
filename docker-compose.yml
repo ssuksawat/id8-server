@@ -1,0 +1,18 @@
+version: '2'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: .docker/${APP_ENV}.dockerfile
+    ports:
+      - "3001:3001"
+    env_file: .env/${APP_ENV}.env
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/id8-server
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    env_file: .env/${APP_ENV}.env

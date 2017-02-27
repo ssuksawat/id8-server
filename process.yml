@@ -1,0 +1,8 @@
+apps:
+  - script   : 'server.js'
+    name     : 'id8-server'
+    node_args:
+      - '--harmony'
+      - '--use_strict'
+    exec_mode: 'cluster'
+    instances: 1

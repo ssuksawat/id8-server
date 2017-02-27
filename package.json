@@ -1,0 +1,30 @@
+{
+  "name": "id8-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sompop Suksawat <ssuksawat21@gmail.com>",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.29.0",
+    "winston": "^2.3.1"
+  }
+}
