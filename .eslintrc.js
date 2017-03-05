@@ -10,6 +10,7 @@ module.exports = {
       "anonymous": "always",
       "named": "never",
       "asyncArrow": "ignore"
-    }]
+    }],
+    "spaced-comment": "off"
   }
 };

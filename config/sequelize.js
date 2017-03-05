@@ -8,6 +8,9 @@ const sequelize = new Sequelize(env.db, { logging: logging });
 
 module.exports = sequelize;
 
+/* Load models */
+require('../users/user.model');
+
 sequelize.authenticate()
   .then(() => logger.info('Database connected'))
   .then(() => sequelize.sync())
