@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/sequelize');
-const encryption = require('../utils/encryption');
+const encryption = require('../util/encryption');
 
 const User = sequelize.define('user', {
   email: { type: Sequelize.STRING, required: true, unique: true },

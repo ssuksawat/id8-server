@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const env = require('../config/env');
-const encryption = require('../utils/encryption');
+const encryption = require('../util/encryption');
 const User = require('../users/user.model');
 
 module.exports = {
