@@ -11,7 +11,12 @@ const config = {
     port: process.env.PORT || 3001,
     logLevel: process.env.LOG_LEVEL || 'debug',
     apiLogLevel: process.env.API_LOG_LEVEL || 'dev',
-    secret: process.env.APP_SECRET || 'secret stuff'
+    secret: process.env.APP_SECRET || 'secret stuff',
+    googleAuth: {
+      clientID: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+      callbackURL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3001/auth/google/callback'
+    }
   },
   production: {
     name: 'production',
@@ -20,7 +25,12 @@ const config = {
     port: process.env.PORT || 3001,
     logLevel: process.env.LOG_LEVEL || 'error',
     apiLogLevel: process.env.API_LOG_LEVEL || 'tiny',
-    secret: process.env.APP_SECRET || 'super secret stuff'
+    secret: process.env.APP_SECRET || 'super secret stuff',
+    googleAuth: {
+      clientID: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+      callbackURL: process.env.GOOGLE_CALLBACK_URL || ''
+    }
   }
 };
 
