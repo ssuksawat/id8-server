@@ -3,7 +3,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-const env = require('./config');
+const env = require('./env');
 const User = require('../users/user.model');
 
 passport.use(new JwtStrategy({

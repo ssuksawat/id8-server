@@ -5,6 +5,7 @@ const logger = require('./util/logger');
 const app = express();
 
 require('./config/sequelize');
+require('./config/passport');
 require('./config/middleware')(app, env);
 require('./config/routes')(app, env);
 
