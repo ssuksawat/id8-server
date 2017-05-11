@@ -1,13 +1,13 @@
-const Sequelize = require('sequelize');
+const { STRING } = require('sequelize');
 const sequelize = require('../config/sequelize');
 const encryption = require('../util/encryption');
 
 const User = sequelize.define('user', {
-  email: { type: Sequelize.STRING, required: true, unique: true },
-  password: { type: Sequelize.STRING },
-  fullName: { type: Sequelize.STRING, required: true },
-  googleId: Sequelize.STRING,
-  photo: Sequelize.STRING
+  email: { type: STRING, required: true, unique: true },
+  password: { type: STRING },
+  fullName: { type: STRING, required: true },
+  googleId: STRING,
+  photo: STRING
 }, {
   indexes: [
     { method: 'BTREE', fields: ['fullName'] },

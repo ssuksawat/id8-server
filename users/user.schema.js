@@ -1,4 +1,4 @@
-const userSchema = [`
+const userSchema = `
   type User {
     id: ID!,
     email: String!,
@@ -7,6 +7,14 @@ const userSchema = [`
     googleId: String,
     photo: String
   }
-`];
+`;
 
-module.exports = { userSchema };
+const userResolvers = {
+  Query: {
+    currentUser(root, args, context) {
+      return context.user || null;
+    }
+  }
+};
+
+module.exports = { userSchema, userResolvers };
