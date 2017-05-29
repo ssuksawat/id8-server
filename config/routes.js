@@ -1,14 +1,11 @@
 const passport = require('passport');
-const { graphqlExpress, graphiqlExpress } = require('graphql-server-express');
+const { graphqlExpress } = require('graphql-server-express');
 const schema = require('./schema');
 const AuthRouter = require('../auth/auth.routes');
 
 module.exports = (app, env) => {
   if (process.env.NODE_ENV !== 'production') {
-    app.use('/graphiql', graphiqlExpress({
-      endpointURL: '/api/graphql',
-      passHeader: `'Authorization': 'JWT ${env.testToken}'`
-    }));
+    app.use('/graphiql', require('../util/graphiql')('/api/graphql'));
   }
 
   app.use('/auth', AuthRouter);

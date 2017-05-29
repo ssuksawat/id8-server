@@ -17,7 +17,9 @@ const config = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
       callbackURL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3001/auth/google/callback'
     },
-    testToken: process.env.TEST_TOKEN || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbXBvcEB0ZXN0LmNvbSIsImlhdCI6MTQ5MzcwODk2OCwiZXhwIjoxNDk0MzEzNzY4fQ.ca69aKpETfB-W4V_PauvUkAQBxzww1CCLlTxSkVNh6g'
+    testUserAccount: {
+      email: process.env.TEST_USER_EMAIL || ''
+    }
   },
   production: {
     name: 'production',
