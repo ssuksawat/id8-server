@@ -4,6 +4,7 @@ const schema = require('./schema');
 const AuthRouter = require('../auth/auth.routes');
 
 module.exports = (app, env) => {
+  // add graphiql route for development
   if (process.env.NODE_ENV !== 'production') {
     app.use('/graphiql', require('../util/graphiql')('/api/graphql'));
   }

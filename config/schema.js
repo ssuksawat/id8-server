@@ -10,8 +10,13 @@ const rootSchema = `
     boards: [Board]
   }
 
+  type Mutation {
+    addBoard (name: String!) : Board
+  }
+
   schema {
-    query: Query
+    query: Query,
+    mutation: Mutation
   }
 `;
 const rootResolvers = { Query: {} };
