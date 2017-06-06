@@ -1,17 +1,17 @@
 const { merge } = require('lodash');
 const { makeExecutableSchema } = require('graphql-tools');
 
-const { userSchema, userResolvers } = require('../users/user.schema');
-const { boardSchema, boardResolvers } = require('../boards/board.schema');
+const { userSchema, userQueries, userResolvers } = require('../users/user.schema');
+const { boardSchema, boardQueries, boardMutations, boardResolvers } = require('../boards/board.schema');
 
 const rootSchema = `
   type Query {
-    currentUser: User,
-    boards: [Board]
+    ${userQueries},
+    ${boardQueries}
   }
 
   type Mutation {
-    addBoard (name: String!) : Board
+    ${boardMutations}
   }
 
   schema {

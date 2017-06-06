@@ -9,12 +9,16 @@ const userSchema = `
   }
 `;
 
+const userQueries = `
+  me: User
+`;
+
 const userResolvers = {
   Query: {
-    currentUser(root, args, context) {
+    me(root, args, context) {
       return context.user || null;
     }
   }
 };
 
-module.exports = { userSchema, userResolvers };
+module.exports = { userSchema, userQueries, userResolvers };

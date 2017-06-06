@@ -11,6 +11,14 @@ const boardSchema = `
   }
 `;
 
+const boardQueries = `
+  boards: [Board]
+`;
+
+const boardMutations = `
+  addBoard (name: String!) : Board
+`;
+
 const boardResolvers = {
   Query: {
     boards(root, args, context) {
@@ -29,4 +37,9 @@ const boardResolvers = {
   }
 };
 
-module.exports = { boardSchema, boardResolvers };
+module.exports = {
+  boardSchema,
+  boardQueries,
+  boardMutations,
+  boardResolvers
+};
