@@ -16,7 +16,9 @@ const boardQueries = `
 `;
 
 const boardMutations = `
-  addBoard (name: String!) : Board
+  addBoard (name: String!) : Board,
+  changeBoardName (id: ID!, name: String!) : Board,
+  deleteBoard (id: ID!) : Board
 `;
 
 const boardResolvers = {
@@ -28,6 +30,21 @@ const boardResolvers = {
   Mutation: {
     addBoard(root, { name }, { user }) {
       return Board.create({ name, userId: user.id });
+    },
+    async changeBoardName(root, { id, name }, { user }) {
+      let board = await Board.findById(id);
+      console.log('Board: ', board);
+      if (!board) { throw new Error(`Board with id ${id} does not exist`); }
+      if (board.userId !== user.id) { throw new Error('Unauthorized'); }
+      board.name = name;
+      return board.save();
+    },
+    async deleteBoard(root, { id }, { user }) {
+      let board = await Board.findById(id);
+      if (!board) { throw new Error(`Board with id ${id} does not exist`); }
+      if (board.userId !== user.id) { throw new Error('Unauthorized'); }
+      await board.destroy();
+      return board;
     }
   },
   Board: {

@@ -19,6 +19,7 @@ const rootSchema = `
     mutation: Mutation
   }
 `;
+
 const rootResolvers = { Query: {} };
 
 const schema = [rootSchema, userSchema, boardSchema];
